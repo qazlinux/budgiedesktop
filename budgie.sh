@@ -672,14 +672,18 @@ EOF
     log_message "NetworkManager configurado"
 }
 
-# Configuración de Kitty Terminal
+# Configuración de Kitty Terminal SIN mensaje automático
 configure_kitty_terminal() {
     if [[ "$CONFIGURE_KITTY" == "yes" ]]; then
         log_message "Configurando Kitty Terminal con temas personalizados..."
         
         local config_dir="$USER_HOME/.config/kitty"
-        create_user_dir "$config_dir"
+        local themes_dir="$USER_HOME/.bash-themes"
         
+        create_user_dir "$config_dir"
+        create_user_dir "$themes_dir"
+        
+        # Configuración principal de Kitty
         local kitty_config='# Kitty Terminal Configuration
 enable_audio_bell no
 background_opacity 0.90
@@ -710,7 +714,29 @@ color15 #ECEFF4'
         
         echo "$kitty_config" | run_as_user tee "$config_dir/kitty.conf" > /dev/null
         run_as_user chmod 644 "$config_dir/kitty.conf"
+        
+        # Crear archivo .bash-themes/omb-default.sh SIN mensaje automático
+        local omb_theme='# Oh My Bash Default Theme
+PS1="\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[00m\]\$ "
+export PS1'
+        
+        echo "$omb_theme" | run_as_user tee "$themes_dir/omb-default.sh" > /dev/null
+        run_as_user chmod 644 "$themes_dir/omb-default.sh"
+        
+        # Configurar .bashrc para cargar el tema SIN mensaje automático
+        local bashrc_file="$USER_HOME/.bashrc"
+        local theme_line="source $themes_dir/omb-default.sh"
+        
+        if [ -f "$bashrc_file" ]; then
+            if ! grep -q "source $themes_dir/omb-default.sh" "$bashrc_file"; then
+                run_as_user echo "$theme_line" >> "$bashrc_file"
+            fi
+        else
+            echo "$theme_line" | run_as_user tee "$bashrc_file" > /dev/null
+        fi
+        
         log_message "✅ Kitty Terminal configurado correctamente"
+        
     else
         log_message "Saltando configuración de Kitty"
     fi
