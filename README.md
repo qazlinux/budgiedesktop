@@ -5,7 +5,7 @@ Script de instalación mínima del entorno de escritorio Budgie, diseñado para 
 
 Minimal installation script for the Budgie Desktop Environment, designed for Debian Bookworm and  Trixie. It provides a clean, lightweight setup with essential components only, ensuring optimal performance and compatibility.
 
-Installation - Instalación
+# Instalación - Installation
 
     git clone https://github.com/qazlinux/budgiedesktop.git
 
