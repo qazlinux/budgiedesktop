@@ -7,6 +7,8 @@ Minimal installation script for the Budgie Desktop Environment, designed for Deb
 
 # Installation
 
+git clone https://github.com/qazlinux/budgiedesktop
+
 chmod +x budgie.sh
 
 sudo ./budgie.sh
