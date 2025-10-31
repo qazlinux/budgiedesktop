@@ -8,6 +8,7 @@ Minimal installation script for the Budgie Desktop Environment, designed for Deb
 # Installation
 
 chmod +x budgie.sh
+
 sudo ./budgie.sh
 
 # Budgie Desktop Installer
