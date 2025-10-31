@@ -42,7 +42,7 @@ Minimal installation script for the Budgie Desktop Environment, designed for Deb
 
     System reboot required after installation to apply all changes
 
-🎯 Features Available in All Languages
+🎯 Functions of the Script
 
     Complete Budgie Desktop environment
 
