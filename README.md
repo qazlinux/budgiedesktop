@@ -39,8 +39,6 @@ Installation - Instalación
 
     Operating System: Debian Bookworm (12 Oldstable) or Trixie (13 - Stable)
 
-    Privileges: User with sudo access (do NOT run as root)
-
     Storage: 5-10 GB free disk space
 
     Memory: 2 GB RAM minimum
