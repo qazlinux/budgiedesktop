@@ -26,7 +26,7 @@ Minimal installation script for the Budgie Desktop Environment, designed for Deb
 
 📋 Minimum Requirements
 
-    Operating System: Debian Bookworm (12) or Trixie (testing)
+    Operating System: Debian Bookworm (12 Oldstable) or Trixie (13 - Stable)
 
     Privileges: User with sudo access (do NOT run as root)
 
