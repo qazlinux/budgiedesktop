@@ -17,7 +17,6 @@ Minimal installation script for the Budgie Desktop Environment, designed for Deb
 | 🇺🇸 English | English | `en` |
 | 🇫🇷 Français | French | `fr` |
 | 🇮🇹 Italiano | Italian | `it` |
-
 | 🇵🇹 Português | Portuguese | `pt` |
 | 🇩🇪 Deutsch | German | `de` |
 
