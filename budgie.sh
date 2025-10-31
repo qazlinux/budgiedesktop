@@ -614,7 +614,7 @@ watch-later-options=start,vid,aid,sid'
     log_message "Configuración de MPV creada en: $config_file"
 }
 
-# Configuración LightDM y GRUB
+# Configuración LightDM y GRUB MEJORADA
 configure_lightdm_grub() {
     local lightdm_file="/etc/lightdm/lightdm.conf"
     if [ -f "$lightdm_file" ]; then
@@ -624,9 +624,26 @@ configure_lightdm_grub() {
         log_message "LightDM no encontrado, omitiendo configuración"
     fi
 
-    run_sudo sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=".*"/GRUB_CMDLINE_LINUX_DEFAULT="quiet nowatchdog loglevel=3"/' /etc/default/grub
+    # Configuración diferente para Bookworm vs Trixie
+    local grub_cmdline=""
+    case "$DEBIAN_VERSION" in
+        "bookworm")
+            grub_cmdline="quiet nowatchdog loglevel=3"
+            log_message "Configurando GRUB para Bookworm: $grub_cmdline"
+            ;;
+        "trixie")
+            grub_cmdline="quiet loglevel=1 rd.udev.log_level=0 systemd.show_status=false"
+            log_message "Configurando GRUB para Trixie: $grub_cmdline"
+            ;;
+        *)
+            grub_cmdline="quiet nowatchdog loglevel=3"
+            log_message "Configurando GRUB por defecto: $grub_cmdline"
+            ;;
+    esac
+
+    run_sudo sed -i "s/^GRUB_CMDLINE_LINUX_DEFAULT=\".*\"/GRUB_CMDLINE_LINUX_DEFAULT=\"$grub_cmdline\"/" /etc/default/grub
     run_sudo update-grub
-    log_message "GRUB configurado"
+    log_message "GRUB configurado para $DEBIAN_VERSION"
 }
 
 # Reinstalar Bluetooth solo en Bookworm
