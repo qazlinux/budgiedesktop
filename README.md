@@ -20,10 +20,7 @@ Minimal installation script for the Budgie Desktop Environment, designed for Deb
 
 ## 🚀 Quick Start
 
-**All languages are available from the start menu:**
-
-```bash
-./install_budgie.sh
+**All languages are available from the start menu:** ```bash ./install_budgie.sh
 
 📋 Minimum Requirements
 
