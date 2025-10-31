@@ -5,6 +5,11 @@ Script de instalación mínima del entorno de escritorio Budgie, diseñado para 
 
 Minimal installation script for the Budgie Desktop Environment, designed for Debian Bookworm and  Trixie. It provides a clean, lightweight setup with essential components only, ensuring optimal performance and compatibility.
 
+# Installation
+
+chmod +x budgie.sh
+sudo ./budgie.sh
+
 # Budgie Desktop Installer
 
 > Multi-language automated Budgie Desktop installation for Debian
@@ -22,7 +27,7 @@ Minimal installation script for the Budgie Desktop Environment, designed for Deb
 
 ## 🚀 Quick Start
 
-**All languages are available from the start menu:** ```bash ./install_budgie.sh
+**All languages are available from the start menu:** 
 
 📋 Minimum Requirements
 
