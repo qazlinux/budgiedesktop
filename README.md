@@ -1,6 +1,6 @@
 <img width="500" height="500" alt="logo" src="https://github.com/user-attachments/assets/77276095-f4e2-423c-bcc2-09f0f68fe86d" />
 
-# budgiedesktop
+# Budgie Desktop
 Script de instalación mínima del entorno de escritorio Budgie, diseñado para Debian 12 (Bookworm) y 13 (Trixie). Proporciona una configuración limpia y ligera con solo los componentes esenciales, garantizando un rendimiento y compatibilidad óptimos.
 
 Minimal installation script for the Budgie Desktop Environment, designed for Debian Bookworm and  Trixie. It provides a clean, lightweight setup with essential components only, ensuring optimal performance and compatibility.
